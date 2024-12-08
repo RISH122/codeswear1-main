@@ -1,34 +1,74 @@
-<!--  paytm checksum verify karna h payment ke bad kahi kisne temperin g to nhi ki And cart kis kis page par dikhani h  and 404 page inalid querry in slug 70lec-->
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Flipr Placement – Backend Development Task
 
-## Getting Started
+## Overview
+This project implements the frontend and backend for an **e-commerce platform**, providing core functionalities such as user authentication, product management, cart management, and order management. The backend is designed to be robust, scalable, and secure, handling typical operations required for an e-commerce application.
 
-First, run the development server:
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Live Demo
+[Click here to visit the website](https://ietianswear.netlify.app)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Features
 
-## Learn More
+### Authentication
+- **Sign Up** (`POST /signup`): Allows new users to register with their name, email, password, and optional address.
+- **Sign In** (`POST /signin`): Enables existing users to log in and receive a session token.
 
-To learn more about Next.js, take a look at the following resources:
+### Product Management
+- **Add Product** (`POST /addproduct`): Add new products with details like name, description, price, and category.
+- **Update Product** (`PUT /updateproduct/:productId`): Update product details by its unique ID.
+- **Delete Product** (`DELETE /deleteproduct/:productId`): Remove a product from the platform.
+- **Get All Products** (`GET /products`): Fetch all available products.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Cart Management
+- **Add Product to Cart** (`POST /cart/add`): Add a product to the cart or update its quantity if already in the cart.
+- **Update Cart** (`PUT /cart/update`): Modify the quantity of a product in the cart or remove it if the quantity is set to zero.
+- **Delete Product from Cart** (`DELETE /cart/delete`): Remove a specific product from the cart.
+- **Get Cart** (`GET /cart`): Retrieve all items in the customer’s cart along with the total cost.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Order Management
+- **Place Order** (`POST /placeorder`): Finalize the purchase of items in the cart, capturing shipping details and generating an order ID.
+- **Get All Orders** (`GET /getallorders`): Fetch all orders, including customer and product details (admin feature).
+- **Get Orders by Customer ID** (`GET /orders/customer/{customerId}`): Retrieve all orders specific to a customer.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
+- **Backend Framework:** Node.js with Express.js  
+- **Database:** MongoDB  
+- **Authentication:** JSON Web Tokens (JWT) and bcrypt for password hashing  
+- **API Documentation:** Postman  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+## Installation
+
+1. **Clone the repository:**
+ 
+   git clone <repository-url>
+   cd <project-folder>
+
+2. **Set up Environment Variables**
+   Create a .env file in the root directory
+   Add the following variables:
+
+  MONGO_URI=<your-mongodb-connection-string>
+  JWT_SECRET=<your-jwt-secret-key>
+  PORT=<port-number>
+  
+3. **Start the Server:**
+   npm start
+
+
+
+
+
+
+
+
+   
+
+   
+
+   
